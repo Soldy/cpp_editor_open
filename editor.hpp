@@ -25,7 +25,7 @@ namespace cpp_editor_class {
             this->path = path;
         };
         void setExt(std::string ext){
-            this->extension = ("."+ext);
+            this->extension = ext;
         };
         void setEditor(std::string ed){
             this->editor = ed;
@@ -46,7 +46,7 @@ namespace cpp_editor_class {
 
         std::string fileRead (){
             auto ss = std::ostringstream{};
-            ss << std::ifstream(vimfile).rdbuf();
+            ss << std::ifstream(this->file_path).rdbuf();
             std::string text =  ss.str();
             return text;
         };
@@ -72,6 +72,7 @@ namespace cpp_editor_class {
             this->file_path = (
                 this->path+
                 cpp_editor_tool::generateRandomString(10)+
+                "."+
                 this->extension
             );
 
