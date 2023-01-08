@@ -1,8 +1,6 @@
 #ifndef __CPP_EDITOR_OPEN_HPP_
 #define __CPP_EDITOR_OPEN_HPP_
 #include <string>
-#include <vector>
-#include <map>
 #include <iostream>
 #include <fstream>
 #include <filesystem>
