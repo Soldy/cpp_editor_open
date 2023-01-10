@@ -26,7 +26,7 @@ namespace cpp_editor_class {
             this->extension = ext;
         };
         void setEditor(std::string ed){
-            this->editor = ed;
+            this->editor_cmd = ed;
         };
         std::string editor(std::string text){
             this->fileName();
@@ -40,7 +40,7 @@ namespace cpp_editor_class {
         std::string path = "/tmp/";
         std::string extension = ".txt";
         std::string file_path = "";
-        std::string editor = "vim";
+        std::string editor_cmd = "vim";
 
         std::string fileRead (){
             auto ss = std::ostringstream{};
@@ -60,13 +60,13 @@ namespace cpp_editor_class {
         void open(){
             std::system(
               (
-                this->editor+
+                this->editor_cmd+
                 " "+
                 this->file_path
               ).c_str()
             );
         };
-        std::string fileName(){
+        void fileName(){
             this->file_path = (
                 this->path+
                 cpp_editor_tool::generateRandomString(10)+
